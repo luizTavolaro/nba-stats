@@ -7,11 +7,11 @@ function App() {
   const [selectedTeamId, setSelectedTeamId] = useState(1);
 
   useEffect(() => {
-    fetch("http://ec2-3-87-80-233.compute-1.amazonaws.com:5000/teams")
+    fetch("/api/teams")
       .then((response) => response.json())
       .then((data) => setTeams(data))
       .catch((error) => console.error("Erro ao buscar times:", error));
-  }, []);
+}, []);
 
   const handleSelectTeam = (teamId) => {
     setSelectedTeamId(parseInt(teamId)); 

@@ -8,7 +8,7 @@ function TeamStandings({teamId}) {
 
   useEffect(() => {
     if (teamId) {
-      fetch(`http://ec2-3-87-80-233.compute-1.amazonaws.com:5000/standings/${teamId}`)
+      fetch(`/api/standings/${teamId}`)
         .then((response) => response.json())
         .then((data) => setStandings(data))
         .catch((error) => console.error("Erro ao buscar dados:", error));
